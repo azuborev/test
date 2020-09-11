@@ -11,24 +11,40 @@ $grey = imagecolorallocate($im, 128, 128, 128);
 $white = imagecolorallocate($im, 255, 255, 255);
 
 $id = getIdImage($fileName);
-$string = getString($id);
+$data = getInfoTitle($id);
+$string = $data['string'];
+$oldCount = $data['count'];
 
 imagefill($im,0,0,$white);
 imagestring($im, 5, 0, 0, $string, $grey);
-
 imagepng($im);
 imagedestroy($im);
+
+turnCounter($id, $oldCount);
 
 function getIdImage($name) {
     $strWithId = preg_replace('/[^0-9]/', '', $name);
     return $strWithId;
 }
 
-function getString($id) {
+function getInfoTitle($id) {
     $db = Database::getInstance()->connect();
-    $statement = $db->prepare('SELECT string FROM title WHERE id = ?');
-    $statement->execute([$id]);
-    $string = $statement->fetch(PDO::FETCH_ASSOC);
-    return $string['string'];
+    $result = $db->prepare('SELECT string, count FROM title WHERE id = ?');
+    $result->execute([$id]);
+    $data = $result->fetch(PDO::FETCH_ASSOC);
+    return $data;
 }
 
+function turnCounter($titleId, $oldValue) {
+    $newValue = $oldValue + 1;
+    saveNewCount($titleId, $newValue);
+}
+
+function saveNewCount($id, $count) {
+    $db = Database::getInstance()->connect();
+    $sql = "UPDATE title SET count = :count WHERE id = :id";
+    $result = $db->prepare($sql);
+    $result->bindParam(':id', $id, PDO::PARAM_INT);
+    $result->bindParam(':count', $count, PDO::PARAM_STR);
+    return $result->execute();
+}
