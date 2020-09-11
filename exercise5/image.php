@@ -20,7 +20,7 @@ imagestring($im, 5, 0, 0, $string, $grey);
 imagepng($im);
 imagedestroy($im);
 
-turnCounter($id, $oldCount);
+turnCounter($id, $oldCount); //обновляем значение счетчика
 
 function getIdImage($name) {
     $strWithId = preg_replace('/[^0-9]/', '', $name);
@@ -36,8 +36,8 @@ function getInfoTitle($id) {
 }
 
 function turnCounter($titleId, $oldValue) {
-    $newValue = $oldValue + 1;
-    saveNewCount($titleId, $newValue);
+    $oldValue++;
+    saveNewCount($titleId, $oldValue);
 }
 
 function saveNewCount($id, $count) {
