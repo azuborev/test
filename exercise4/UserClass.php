@@ -9,12 +9,12 @@ interface UserInterface
 
 abstract class User implements UserInterface
 {
-    private  $firstName;
-    private  $secondName;
-    private  $age;
-    private  $gender;
-    private  $phone;
-    private  $email;
+    protected  $firstName;
+    protected  $secondName;
+    protected  $age;
+    protected  $gender;
+    protected  $phone;
+    protected  $email;
 
     public function __construct($firstName, $secondName, $age, $gender, $phone, $email)
     {
@@ -42,11 +42,11 @@ abstract class User implements UserInterface
     }
 }
 
-final class Student extends User
+class Student extends User
 {
-    private $course;
-    private $university;
-    private $studentship;
+    protected $course;
+    protected $university;
+    protected $studentship;
 
     public function __construct($firstName, $secondName, $age, $gender, $phone, $email,
                                 $course, $university, $studentship)
@@ -69,10 +69,10 @@ final class Student extends User
 
 abstract class Worker extends User
 {
-    private $experience;
-    private $company;
-    private $position;
-    private $salary;
+    protected $experience;
+    protected $company;
+    protected $position;
+    protected $salary;
 
     public function __construct($firstName, $secondName, $age, $gender, $phone, $email,
                                 $experience, $company, $position, $salary)
@@ -92,7 +92,7 @@ abstract class Worker extends User
 
 class Developer extends Worker
 {
-    private $programLanguages;
+    protected $programLanguages;
 
     public function __construct($firstName, $secondName, $age, $gender, $phone, $email,
                                 $experience, $company, $position, $salary, $programLanguages)
