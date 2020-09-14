@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteBase '/exercise5'
+RewriteRule "image-(\d+).png" "image.php?id=$1"  [L]
