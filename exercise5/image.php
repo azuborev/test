@@ -3,29 +3,24 @@ error_reporting(E_ALL);
 require_once '../exercise4/DatabaseClass.php';
 
 header('Content-Type: image/png');
-
-$fileName = "image-123.png";
+$id = $_GET['id'];
+$fileName = "image-".$id.".png";
 
 $im = imagecreatefrompng($fileName);
 $grey = imagecolorallocate($im, 128, 128, 128);
 $white = imagecolorallocate($im, 255, 255, 255);
 
-$id = getIdImage($fileName);
 $data = getInfoTitle($id);
-$string = $data['string'];
+
 $oldCount = $data['count'];
+$string = $data['string'];
 
 imagefill($im,0,0,$white);
 imagestring($im, 5, 0, 0, $string, $grey);
 imagepng($im);
 imagedestroy($im);
 
-turnCounter($id, $oldCount); //обновляем значение счетчика
-
-function getIdImage($name) {
-    $strWithId = preg_replace('/[^0-9]/', '', $name);
-    return $strWithId;
-}
+turnCounter($id, $oldCount); //update counter
 
 function getInfoTitle($id) {
     $db = Database::getInstance()->connect();
