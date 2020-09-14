@@ -8,13 +8,13 @@
 <body>
 <h2>Form</h2>
 <form id="form" enctype="multipart/form-data">
-    <div class="fields"></div>
+    <div class="fields" id="inputFields"></div>
     <div><button type="submit" id="submit">Save</button></div>
 </form>
 <p>
-<!--    <button class="back" value="4">Back</button>-->
-    <button class="next" value="1">Forward</button>
+    <button id="back" value="4">Back</button>
+    <button id="next" value="1">Next</button>
 </p>
-<script src="script.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
