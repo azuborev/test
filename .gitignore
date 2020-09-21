@@ -1,6 +1,2 @@
 wp/*
-!wp/wp-content/
-wp/wp-content/*
-!wp/wp-content/plugins/
-wp/wp-content/plugins/*
 !wp/wp-content/plugins/zb-events
