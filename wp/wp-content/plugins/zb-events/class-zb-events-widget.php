@@ -12,21 +12,21 @@ class ZB_Events_Widget extends WP_Widget {
     public function form($instance)
     {
         $event_count = count(get_posts(['post_type' => 'zb_event']));
-        $title = ! empty( $instance['event_title'] ) ? $instance['event_title'] : '';
-        $status = ! empty( $instance['event_status'] ) ? $instance['event_status'] : '';
-        $number = ! empty( $instance['event_number'] ) ? $instance['event_number'] : '';
+        $title = ( ! empty( $instance['event_title'] )) ? $instance['event_title'] : '';
+        $status = ( ! empty( $instance['event_status'] )) ? $instance['event_status'] : '';
+        $number = ( ! empty( $instance['event_number'] )) ? $instance['event_number'] : '';
         if ( !empty($event_count) ) {
             ?>
             <p>
-                <label for="<?php echo $this->get_field_id('event_title'); ?>"><?php echo __( 'Title' ) ?></label>
+                <label for="<?php echo $this->get_field_id('event_title'); ?>"><?php _e( 'Title' ) ?></label>
                 <input class="widefat" id="<?php echo $this->get_field_id('event_title'); ?>" type="text"
                        name="<?php echo $this->get_field_name('event_title'); ?>" value="<?php echo esc_attr( $title ); ?>">
             </p>
             <p>
-                <label for="<?php echo $this->get_field_id('event_status'); ?>"><?php echo __( 'Status' ) ?></label>
+                <label for="<?php echo $this->get_field_id('event_status'); ?>"><?php _e( 'Status' ) ?></label>
                 <select class="widefat" name="<?php echo $this->get_field_name('event_status'); ?>" id="<?php echo $this->get_field_id('event_status'); ?>">
-                    <option value="free" <?php selected( $status, 'free' )?> >Free</option>
-                    <option value="invite" <?php selected( $status, 'invite' )?> >By invitation</option>
+                    <option value="free" <?php selected( $status, 'free' )?> ><?php _e('Free') ?></option>
+                    <option value="invite" <?php selected( $status, 'invite' )?> ><?php _e('By invitation') ?></option>
                 </select>
             </p>
             <p>
@@ -37,7 +37,7 @@ class ZB_Events_Widget extends WP_Widget {
             <?php
         } else {
             ?>
-            <p><?php echo __('Create new events'); ?></p>
+            <p><?php  _e('Create new events'); ?></p>
             <?php
         }
 
@@ -45,8 +45,8 @@ class ZB_Events_Widget extends WP_Widget {
 
     public function widget($args, $instance)
     {
-        $count = $instance['event_number'];
-        $status = $instance['event_status'];
+        $count = ( $instance['event_number'] ) ? $instance['event_number'] : '';
+        $status = ( $instance['event_status'] ) ? $instance['event_status'] : '';
 
         echo $args['before_widget'];
             echo $args['before_title'];
