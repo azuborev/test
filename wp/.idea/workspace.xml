@@ -21,14 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="98201d8f-f50a-4c0b-9d28-1af807215632" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/zb-events/class-zb-events-widget.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/zb-events/class-zb-events-widget.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/zb-events/func-create-extra-fields.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/zb-events/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/zb-events/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/zb-events/zb-events.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/zb-events/zb-events.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/zb-events_ex/create-extra-fields.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/zb-events_ex/functions.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/zb-events_ex/zb-events-widget.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/zb-events_ex/zb-events.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1600416059495</updated>
       <workItem from="1600416060638" duration="22407000" />
-      <workItem from="1600671964904" duration="4493000" />
+      <workItem from="1600671964904" duration="5357000" />
     </task>
     <servers />
   </component>
