@@ -65,6 +65,4 @@ class ZB_Events_Widget extends WP_Widget {
         $instance['event_number'] =( intval( $new_instance['event_number'] ) ) ? strip_tags( $new_instance['event_number'] ) : $old_instance['event_number'] ;
         return $instance;
     }
-
-
 }
