@@ -20,6 +20,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98201d8f-f50a-4c0b-9d28-1af807215632" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/wp-content/languages/plugins/akismet-en_GB.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/languages/plugins/akismet-en_GB.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/languages/themes/twentynineteen-en_GB.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/languages/themes/twentynineteen-en_GB.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/languages/themes/twentyseventeen-en_GB.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/languages/themes/twentyseventeen-en_GB.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/languages/themes/twentysixteen-en_GB.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/languages/themes/twentysixteen-en_GB.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/languages/themes/twentytwenty-en_GB.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/languages/themes/twentytwenty-en_GB.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/plugins/wp-crontrol/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/plugins/wp-crontrol/css/wp-crontrol.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/plugins/wp-crontrol/js/wp-crontrol.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/plugins/wp-crontrol/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/plugins/wp-crontrol/src/event-list-table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/plugins/wp-crontrol/src/event.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/plugins/wp-crontrol/src/schedule-list-table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/plugins/wp-crontrol/src/schedule.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/plugins/wp-crontrol/wp-crontrol.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/plugins/wp-mailhog-smtp/mailhog.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wp-content/plugins/wp-mailhog-smtp/readme.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/wp-content/plugins/zb-cron-weather/zb-cron-weather.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise2/WeatherClass.php" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise2/WeatherClass.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../exercise3-4/DatabaseClass.php" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise3-4/DatabaseClass.php" afterDir="false" />
@@ -742,7 +763,7 @@
       <updated>1600416059495</updated>
       <workItem from="1600416060638" duration="22407000" />
       <workItem from="1600671964904" duration="5357000" />
-      <workItem from="1600756141705" duration="4243000" />
+      <workItem from="1600756141705" duration="4517000" />
     </task>
     <servers />
   </component>
