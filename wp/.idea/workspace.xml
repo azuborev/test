@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98201d8f-f50a-4c0b-9d28-1af807215632" name="Default Changelist" comment="" />
+    <list default="true" id="98201d8f-f50a-4c0b-9d28-1af807215632" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/wp-content/plugins/zb-search-post/zb-search-post.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
