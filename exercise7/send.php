@@ -56,6 +56,7 @@ foreach ($userData as $key => $value) {
     $userData[$key] = (empty($value)) ? null : $value;
 }
 
+
 if (empty($arrError)) {
     try {
         userSave(array_values($userData));
