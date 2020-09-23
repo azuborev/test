@@ -13,7 +13,7 @@ class ZB_Search_Widget extends WP_Widget
             'name' => __( 'Post-Search' ),
             'description' => __( 'You can search posts by date or title' ),
         ];
-        parent::__construct('zb-search-widget', 'Post-Search', $args);
+        parent::__construct('zb-search-widget', __('Post-Search'), $args);
     }
 
     public function form($instance)
@@ -39,18 +39,13 @@ class ZB_Search_Widget extends WP_Widget
     {
         wp_enqueue_script('zb-search-ajax', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', ['jquery'],false,true );
 
-        $number = ( $instance['post_number'] );
         $title = apply_filters( 'widget_title', $instance['title'] );
-
         echo $args['before_widget'];
         if ( ! empty( $title ) ) {
             echo $args['before_title'] . $title . $args['after_title'];
         }
-        echo zb_get_form($number);
+        echo zb_get_form($instance['post_number']);
         echo $args['after_widget'];
-
-
-//        echo zb_show_events_front_widget($status, $count);
     }
 
 
@@ -65,12 +60,10 @@ class ZB_Search_Widget extends WP_Widget
 }
 
 function zb_get_form($number) {
-    $form = '<form id="form">';
-    $form .= '<p><input type="text" name="title" id="title" placeholder="Post\'s Title"></p>';
+    $form = '<p><input type="text" name="title" id="title" placeholder="Post\'s Title"></p>';
     $form .= '<p><input type="date" name="from_date" id="from_date"></p>';
     $form .= '<p><input type="hidden" name="number" id="number" value="'.$number.'"></p>';
-    $form .= '<p><input type="submit" name="search_submit" id="search_submit"></p>';
-    $form .= '<p><input type="submit" name="reset_button" id="reset_button" value="reset"></p></form>';
+    $form .= '<p><button id="reset_button">reset</button></p>';
     $form .= '<div id="post_links"></div>';
     return $form;
 }
