@@ -62,7 +62,7 @@ class ZB_Search_Widget extends WP_Widget
 function zb_get_form($number) {
     $form = '<p><input type="text" name="title" id="title" placeholder="Post\'s Title"></p>';
     $form .= '<p><input type="date" name="from_date" id="from_date"></p>';
-    $form .= '<p><input type="hidden" name="number" id="number" value="'.$number.'"></p>';
+    $form .= '<p><input type="hidden" name="number" id="number" value="'.esc_attr($number).'"></p>';
     $form .= '<p><button id="reset_button">reset</button></p>';
     $form .= '<div id="post_links"></div>';
     return $form;
