@@ -1,4 +1,10 @@
 <?php
+
+function zb_events_widget() {
+    register_widget('ZB_Events_Widget');
+}
+add_action('widgets_init', 'zb_events_widget');
+
 class ZB_Events_Widget extends WP_Widget {
     public function __construct()
     {
@@ -6,7 +12,7 @@ class ZB_Events_Widget extends WP_Widget {
             'name' => __( 'Upcoming events' ),
             'description' => __( 'Displays a block of upcoming events' ),
         ];
-        parent::__construct('zb-events-widget', 'Upcoming events', $args);
+        parent::__construct('zb-events-widget', __('Upcoming events'), $args);
     }
 
     public function form($instance)
@@ -30,7 +36,7 @@ class ZB_Events_Widget extends WP_Widget {
                 </select>
             </p>
             <p>
-                <label for="<?php echo $this->get_field_id('event_number'); ?>"><?php echo __( 'Number' ) ?></label>
+                <label for="<?php echo $this->get_field_id('event_number'); ?>"><?php _e( 'Number' ) ?></label>
                 <input class="widefat" id="<?php echo $this->get_field_id('event_number'); ?>" type="text"
                        name="<?php echo $this->get_field_name('event_number'); ?>" value="<?php echo esc_attr( $number ); ?>">
             </p>
@@ -45,14 +51,14 @@ class ZB_Events_Widget extends WP_Widget {
 
     public function widget($args, $instance)
     {
-        $count = ( $instance['event_number'] ) ? $instance['event_number'] : '';
-        $status = ( $instance['event_status'] ) ? $instance['event_status'] : '';
+        $title = apply_filters( 'widget_title', $instance['event_title'] );
+        $count = ( $instance['event_number'] ) ?: '';
+        $status = ( $instance['event_status'] ) ?: '';
 
         echo $args['before_widget'];
-            echo $args['before_title'];
-                echo $instance['event_title'];
-            echo $args['after_title'];
-            echo zb_show_events_front_widget($status, $count);
+        if ( ! empty( $title ) )
+            echo $args['before_title'] . $title . $args['after_title'];
+        echo zb_show_events_front_widget($status, $count);
         echo $args['after_widget'];
     }
 
