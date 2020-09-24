@@ -10,18 +10,17 @@ define('API_CITY', 'Los Angeles');
 define('FROM_MAIL', 'from@sender.com');
 define('TO_MAIL', 'to@receiver.com');
 
-register_activation_hook(__FILE__, 'activation_send_mail_with_weather');
 function activation_send_mail_with_weather() {
     wp_clear_scheduled_hook( 'send_mail_with_weather' );
     wp_schedule_event( time(), 'three_hours', 'send_mail_with_weather');
 }
+register_activation_hook(__FILE__, 'activation_send_mail_with_weather');
 
-register_deactivation_hook( __FILE__, 'deactivation_send_mail_with_weather');
 function deactivation_send_mail_with_weather() {
     wp_clear_scheduled_hook('send_mail_with_weather');
 }
+register_deactivation_hook( __FILE__, 'deactivation_send_mail_with_weather');
 
-add_filter( 'cron_schedules', 'cron_add_three_hours' );
 function cron_add_three_hours( $schedules ) {
     $schedules['three_hours'] = [
         'interval' => HOUR_IN_SECONDS * 3,
@@ -29,12 +28,14 @@ function cron_add_three_hours( $schedules ) {
     ];
     return $schedules;
 }
+add_filter( 'cron_schedules', 'cron_add_three_hours' );
 
-add_action( 'send_mail_with_weather', 'send_mail_with_updated_weather' );
+
 function send_mail_with_updated_weather(){
     $weather_data = get_weather_data( API_CITY );
     wp_mail( TO_MAIL, 'Weather in '.API_CITY, $weather_data, 'From: ' . FROM_MAIL);
 }
+add_action( 'send_mail_with_weather', 'send_mail_with_updated_weather' );
 
 function get_weather_data( $location ) {
     $params = [
